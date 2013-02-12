@@ -2,7 +2,7 @@ package Mojolicious::Plugin::DeCSRF;
 
 use Mojo::Base 'Mojolicious::Plugin';
 
-our $VERSION = '0.92';
+our $VERSION = '0.93';
 
 sub register {
 	my ($self, $app, $conf) = @_;
@@ -91,7 +91,7 @@ __END__
 
 =head1 NAME
 
-Mojolicious::Plugin::DeCSRF - Mojolicious Plugin
+Mojolicious::Plugin::DeCSRF - Defend from CSRF attacks centrally.
 
 =head1 SYNOPSIS
 
@@ -135,10 +135,7 @@ Mojolicious::Plugin::DeCSRF - Mojolicious Plugin
 
 =head1 DESCRIPTION
 
-L<Mojolicious::Plugin::DeCSRF> is a L<Mojolicious> plugin.
-Defend from CSRF attacks.
-With "good" strategy you have flexible control of the urls.
-"Good" strategy is wrap all of the urls with decsrf->url(URL).
+L<Mojolicious::Plugin::DeCSRF> is a L<Mojolicious> plugin that defend the framework from CSRF attacks centrally. With "good" strategy you have flexible control of the urls. "Good" strategy is wrap all of the urls with decsrf->url(URL) and control all urls that must be protected at one place with decsrf->urls(). 
 
 =head1 OPTIONS
 
