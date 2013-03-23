@@ -2,7 +2,7 @@ package Mojolicious::Plugin::DeCSRF;
 
 use Mojo::Base 'Mojolicious::Plugin';
 
-our $VERSION = '0.93';
+our $VERSION = '0.94';
 
 sub register {
 	my ($self, $app, $conf) = @_;
@@ -165,7 +165,8 @@ Set custom token name in url and session parameters. Default name is 'token'.
 
 Set urls that must be protected. perlre can used.
 
-  decsrf->urls(qw~/protected /.*?ected~);
+  decsrf->urls([qw~/protected /.*?ected~]);
+  push @{decsrf->urls}, qw~/protected /.*?ected~;
 
 =head1 METHODS
 
